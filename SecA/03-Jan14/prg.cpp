@@ -1,12 +1,25 @@
 #include <iostream>
+#include <cstdarg>
 using namespace std;
-int main(int argc,char* argv[], char* env[]){
+
+double aver(int narg,...){
+  double avr = 0;
+  va_list varg;
   int i;
-  for(i=0;i<argc;i++){
-    cout<<i<<": "<<argv[i]<<endl;
+  va_start(varg, narg);
+  for(i=0;i<narg;i++){
+    avr += va_arg(varg, double);
   }
-  for(i=0;env[i] != 0 ;i++){
-    cout<<i<<": "<<env[i]<<endl;
-  }
+  avr = avr / narg;
+  return avr;
+}
+
+
+int main(){
+  double d;
+  d = aver(3, 123.45,234.34,1212.3);
+  cout<<d<<endl;
+  d = aver(4, 234.4,123.45,234.34,1212.3);
+  cout<<d<<endl;
   return 0;
 }
