@@ -9,12 +9,14 @@ void box(){
   console<<"@@@@@@@@@@@@@@@@@@@@@@";
 }
 int main(){
-  char str[81] = "abcdefghijklmnopqrstuvwxyzABCDEFJGHI";
-  bool insert = true;
-  int curpos = 5;
-  int stroff = 4;
   box();
-  console.edit(str, 11, 21, 20, 80, &insert, &stroff, &curpos);
+  console.display("Hello", 11, 21, 20);
+  console.pause();
+  box();
+  console.display("abcdefghijklmnopqrstuvwxyz", 11, 21, 20);
+  console.pause();
+  box();
+  console.display("abcdefghijklmnopqrstuvwxyz", 11, 21);
   console.pause();
   return 0;
 }
