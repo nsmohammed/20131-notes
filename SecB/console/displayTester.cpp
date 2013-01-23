@@ -12,14 +12,18 @@ void box(){
 }
 
 int main(){
-  char str[81] = "Hello how are you this morning!";
-  bool insert = false;
-  int stroffset = 10;
-  int curpos = 8;
+  char str[] = "abcdefghijklmnopqrstuvwxyz";
   box();
-  console.edit(str, 11, 21, 15, 80, &insert, &stroffset, &curpos);
-  console.setPos(15, 0);
-  console << str;
+  console.display(str, 11, 21);
+  console.pause();
+  console.clear();
+  box();
+  console.display(str, 11, 21, 20);
+  console.pause();
+  str[7] = 0;
+  console.clear();
+  box();
+  console.display(str, 11, 21, 20);
   console.pause();
   return 0;
 }
