@@ -2,8 +2,8 @@
 // conbio.cpp
 //
 // Fardad Soleimanloo, Chris Szalwinski
-// Jan 20 2012
-// Version 1.01
+// Feb 1 2013
+// Version 1.02
 
 /* table of platforms */
 #define BIO_LINUX       1
@@ -61,7 +61,14 @@ namespace bio { // continuation of bio namespace
         while( len-- && (*des++ = *src++));
         return (char*)d;
     }
-
+    char* strcat(void* d, const void *s){
+        char*des = (char*)d;
+        const char*src = (const char*)s;
+        while(*des++);
+        des--;
+        while(*des++ = *src++);
+        return (char*)d;
+    }
     //----------------- Platform-Dependent Section ------------------------------
     //
 
